@@ -19,7 +19,7 @@ class PreferenceManager(context: Context) {
     }
 
     var selectedTheme: String
-        get() = prefs.getString(KEY_THEME, "Slate Dark") ?: "Slate Dark"
+        get() = prefs.getString(KEY_THEME, "System Default") ?: "System Default"
         set(value) = prefs.edit().putString(KEY_THEME, value).apply()
 
     var appSecurityPin: String
@@ -46,7 +46,7 @@ class PreferenceManager(context: Context) {
     fun verifyPin(enteredPin: String): Boolean {
         val savedPin = appSecurityPin
         return if (savedPin.isEmpty()) {
-            throw IllegalStateException("PIN is not set")
+            false
         } else {
             savedPin == enteredPin
         }

@@ -32,10 +32,11 @@ private val LightColorScheme =
 
 @Composable
 fun MyApplicationTheme(
-  selectedThemeName: String = "Slate Dark",
+  selectedThemeName: String = "System Default",
   content: @Composable () -> Unit,
 ) {
-  val colorScheme = ThemeSettings.getColorScheme(selectedThemeName)
+  val isSystemDark = isSystemInDarkTheme()
+  val colorScheme = ThemeSettings.getColorScheme(selectedThemeName, isSystemDark)
 
   MaterialTheme(colorScheme = colorScheme, typography = Typography, content = content)
 }
