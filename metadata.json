@@ -1,0 +1,6 @@
+{
+  "name": "Secure Offline Notes",
+  "description": "A secure offline notes application with Markdown editor, undo/redo, categorization, search, and dynamic custom themes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
